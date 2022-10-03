@@ -2,7 +2,7 @@ var app = new Vue({
     el: "#app",
     
     data: {
-        userCredentials:[{username:"admin",password:"admin",rick:0,name:"Oscar",type:"administrador"}],
+        userCredentials:[{username:"admin",password:"admin",rick:0,name:"Oscar",type:"1"}],
         users:[],
         name:"",
         username:"",
