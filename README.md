@@ -24,7 +24,7 @@ podras clonar y/o forkear el c√≥digo haciendo uso del git clone o git fork, seg√
 `VUE/ BOOTSTRAP/ CSS`
 
 ## Back Log
-`[https://github.com/users/anyelithj/projects/4/views/1](https://dtorof.atlassian.net/jira/software/projects/RMA/boards/1)`
+`https://dtorof.atlassian.net/jira/software/projects/RMA/boards/1`
 
 ## Contribuidores
 [Yennifer Ortiz](https://github.com/yortizher)/
