@@ -21,13 +21,13 @@ new Vue({
             } else{
                 this.message('¡Compra exitosa. Ahora tienes una nueva card!')
                 let discount = card.price
-                user[0].map(usr => {
+                let balanceShoppingCard =  user.map(usr => {
                     return {
                         ...usr,
                         balance: usr.balance -= discount
                     }
                 })
-
+                console.log(balanceShoppingCard)
             }
         },
         rechargeRickCoins(value,...user){
