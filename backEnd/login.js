@@ -38,6 +38,7 @@ var app = new Vue({
             },
             validateCredentials(user, key) {
               this.login();
+            
               let loguedUser = [];
               let res = this.userCredentials.filter(
                 (usr) => usr.username === user && usr.password === key
@@ -102,7 +103,7 @@ var app = new Vue({
                         
                         
             
-                          setTimeout(function() {location.href="./frontEnd/main.html"}, 2000);
+                          setTimeout(function() {location.href="./frontEnd/menuMain.html"}, 2000);
                         }
                 }
               
@@ -127,7 +128,14 @@ var app = new Vue({
     },
     computed: {},
     created(){
+      if(localStorage.getItem("users") ==null){
+        this.userCredentials = [{username:"admin",password:"admin",rick:0,name:"Oscar",type:"1",cards:[]}]
+        this.updateLocalStorage()
+        
+      }else{
         this.userCredentials = JSON.parse(localStorage.getItem("users"));
+    
+      }
       
     },
   });
