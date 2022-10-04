@@ -29,7 +29,7 @@ var app = new Vue({
             localStorage.setItem("users", JSON.stringify(this.users))
         },
         register(){
-        
+          this.validations()? this.error : 
             this.users.push({
                 name: this.name,
                 username:this.username,
@@ -38,8 +38,8 @@ var app = new Vue({
                 rick: this.rick,
                 cards: []
                 });
-                console.log(this.users)
                 this.updateLocalStorage()
+               
         },
         validations(){
           if(this.name === "") {
