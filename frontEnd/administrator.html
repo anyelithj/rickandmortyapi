@@ -49,13 +49,18 @@
       <div class="row mb-2">
         <div class="col">
           <label for="rol" class="form-label text-muted">Rol</label>
-          <input v-model="type" id="rol" class="form-control" type="number" placeholder="Rol">
+          <select class="form-select"  v-model="type" aria-label="Default select example">
+            <option value="1">Administrador</option>
+            <option value="2">Usuario</option>
+
+          </select>
+
           <span class="error" v-if="errors.rol" style="color: red;">Por favor ingrese un rol</span>
         </div>
       </div>
       <div class="row mb-2">
         <div class="col d-grid gap-2 mb-3">
-          <button class="button" type="button">Entrar</button>
+          <button @click ="register"class="button" type="button">Entrar</button>
         </div>
       </div>
     </form>
