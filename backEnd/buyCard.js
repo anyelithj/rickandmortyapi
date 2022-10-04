@@ -69,5 +69,3 @@ new Vue({
         }
     }
 })
-
-buyCards()
