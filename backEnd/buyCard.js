@@ -5,7 +5,7 @@ new Vue({
         wholeRegisteredUsers: [],
         rechargedValue :0,
         entityToPay: ['Nequi', 'Efecty'],
-        quantityPayedForCard: 0,
+        quantityPayedForCard: "",
         wholeCardsData: [],
         CURRENT_USER_LOGUED: "userLoged",
         USERS_REGISTERED: "users",

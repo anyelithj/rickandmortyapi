@@ -1,0 +1,27 @@
+body{
+    background: url(https://www.wallpaperuse.com/wallp/41-410895_m.png)100% 50%/cover no-repeat ;}
+    
+#app{
+    max-width:  45%;
+    margin-top: 2%;
+    background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
+    padding: 2% 10%;
+    opacity: 0.8;
+   
+}
+#appTwo{
+    background-color: black;
+}
+#user img{
+    display:block;
+    margin:auto;
+    width:60%;
+    height: 140%;
+    border-radius: 50%;
+}
+#appTwo h2, label{
+    color: white;
+}
+
+
+
