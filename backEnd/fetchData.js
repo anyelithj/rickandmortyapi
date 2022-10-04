@@ -3,7 +3,7 @@ new Vue({
     data: {
         entityToPay: "",
         quantityPayedForCard: 0,
-        wholeCardsData: {},
+        wholeCardsData: [],
         DATA_FETCHED_KEY: "data-api"
     },
     created(){
@@ -39,6 +39,7 @@ new Vue({
             } catch(error) {
                 console.log(error)
             }
+            console.log(this.wholeCardsData);
         }
     }
 })
