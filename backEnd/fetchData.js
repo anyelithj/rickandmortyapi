@@ -11,7 +11,7 @@ new Vue({
         setterLocalStorage(key, data){
             localStorage.setItem(key, JSON.stringify(data))
         },
-        getParsedLocalStorage(key) {
+        getterParsedLocalStorage(key) {
             return JSON.parse(localStorage.getItem(key) || "[]")
         },
         getRandomValue(min = 100, max = 700){
@@ -36,12 +36,6 @@ new Vue({
             } catch(error) {
                 console.log(error)
             }
-        },
-        buyCards(){
-
-        },
-        rechargeRickPoints(){
-
         }
     }
 })
