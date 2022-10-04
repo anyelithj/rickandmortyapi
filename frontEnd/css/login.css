@@ -11,8 +11,6 @@ body{
 }
 #appTwo{
     background-color: black;
-  
-
 }
 #user img{
     display:block;
@@ -20,7 +18,6 @@ body{
     width:60%;
     height: 140%;
     border-radius: 50%;
-    
 }
 #appTwo h2, label{
     color: white;
