@@ -2,15 +2,18 @@ new Vue({
     el: '#app',
     data: {
         currentLoguedUser: {},
+        wholeRegisteredUsers: [],
         rechargedValue :0,
-        entityToPay: "",
+        entityToPay: ['Nequi', 'Efecty'],
         quantityPayedForCard: 0,
         wholeCardsData: [],
-        CURRENT_USER_LOGUED: "current-user",
+        CURRENT_USER_LOGUED: "userLoged",
+        USERS_REGISTERED: "users",
         DATA_FETCHED_KEY: "data-api"
     },
     created(){
         this.fetchingDataFromApi()
+        this.wholeRegisteredUsers = this.getterParsedLocalStorage(this.USERS_REGISTERED)
     },
     methods: {
         setterLocalStorage(key, data){
@@ -30,7 +33,7 @@ new Vue({
                 const request = await fetch(URL)
                 const response = await request.json()
                 
-               this.setterLocalStorage(this.DATA_FETCHED_KEY, this.wholeCardsData = response.results.map(({id,name,species,gender,image, location}) => ({
+               this.setterLocalStorage(this.DATA_FETCHED_KEY, this.wholeCardsData = response.results.map(({id,name,species,gender,image,location}) => ({
                     id,
                     name,
                     species,
@@ -44,7 +47,7 @@ new Vue({
             }
         },
         buyCards(card,...user){
-            if(user[0].balance < card.price) {
+            if(user[0].rick < card.price) {
                 return console.log('Saldo insuficiente. Por favor recargue su cuenta.');
             } else{
                 this.message('¡Compra exitosa. Ahora tienes una nueva card!')
@@ -52,7 +55,7 @@ new Vue({
                 let balanceShoppingCard =  user.map(usr => {
                     return {
                         ...usr,
-                        balance: usr.balance -= discount
+                        rick: usr.rick -= discount
                     }
                 })
                 console.log(balanceShoppingCard)
@@ -62,10 +65,11 @@ new Vue({
             let res = user.map(usr => {
                 return{
                     ...usr,
-                    balance: usr.balance += value
+                    rick: usr.rick += value
                 } 
             })
-            return this.setterLocalStorage(this.CURRENT_USER_LOGUED,res) 
+            let [userUpdated] = res
+            return this.setterLocalStorage(this.CURRENT_USER_LOGUED,userUpdated) 
         }
     }
 })
