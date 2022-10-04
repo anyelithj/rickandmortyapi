@@ -55,33 +55,8 @@ var app = new Vue({
                   "error"
                 );
                 }else{
-             if(loguedUser[0].type=='1'){
-              if(loguedUser.length === 0){
-                this.message(
-                  'https://media2.giphy.com/media/jSQCODNIa6k5myYjyL/200w.webp',
-                  "Oops",
-                  2200,
-                  "center",
-                  "Verifique que los datos sean correctos",
-                  "error"
-                );
-                }else{
-                  this.updateLocalStorage()
-                  this.message(
-                    "https://media1.giphy.com/media/J1XU9sjU2K2pCluvXo/200w.webp",
-                    2200,
-                    "center",
-                    "Ingreso exitoso",
-                    "success"
-                  ) ;
-                 
-                 
-    
-                  setTimeout(function() {location.href="./frontEnd/administrator.html"}, 2000);
-                }
-                    
-             } else if(loguedUser[0].type=='2'){
-                if(loguedUser.length === 0){
+                if(loguedUser[0].type=='1'){
+                  if(loguedUser.length === 0){
                     this.message(
                       'https://media2.giphy.com/media/jSQCODNIa6k5myYjyL/200w.webp',
                       "Oops",
@@ -94,17 +69,43 @@ var app = new Vue({
                       this.updateLocalStorage()
                       this.message(
                         "https://media1.giphy.com/media/J1XU9sjU2K2pCluvXo/200w.webp",
+                        "¡Enhorabuena!",
                         2200,
                         "center",
                         "Ingreso exitoso",
                         "success"
                       ) ;
-                     
-                     
+                    
+                    
         
-                      setTimeout(function() {location.href="./frontEnd/main.html"}, 2000);
-                    }
-             }
+                      setTimeout(function() {location.href="./frontEnd/administrator.html"}, 2000);
+                    }      
+                } else if(loguedUser[0].type=='2'){
+                    if(loguedUser.length === 0){
+                        this.message(
+                          'https://media2.giphy.com/media/jSQCODNIa6k5myYjyL/200w.webp',
+                          "Oops",
+                          2200,
+                          "center",
+                          "Verifique que los datos sean correctos",
+                          "error"
+                        );
+                        }else{
+                          this.updateLocalStorage()
+                          this.message(
+                            "https://media1.giphy.com/media/J1XU9sjU2K2pCluvXo/200w.webp",
+                            "¡Enhorabuena!",
+                            2200,
+                            "center",
+                            "Ingreso exitoso",
+                            "success"
+                          ) ;
+                        
+                        
+            
+                          setTimeout(function() {location.href="./frontEnd/main.html"}, 2000);
+                        }
+                }
               
              
                 
@@ -112,12 +113,13 @@ var app = new Vue({
                   
                   
             }},
-            message(imageUrl, timer, position, text, icon) {
+            message(imageUrl,title, timer, position, text, icon)  {
               Swal.fire({
                 imageUrl,
                 position,
                 text,
                 icon,
+                title,
                 showConfirmButton: false,
                 timer,
                
