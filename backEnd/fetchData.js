@@ -1,6 +1,8 @@
 new Vue({   
     el: '#app',
     data: {
+        entityToPay: "",
+        quantityPayedForCard: 0,
         wholeCardsData: {},
         DATA_FETCHED_KEY: "data-api"
     },
@@ -25,12 +27,13 @@ new Vue({
                 const request = await fetch(URL)
                 const response = await request.json()
                 
-               this.setterLocalStorage(this.DATA_FETCHED_KEY, this.wholeCardsData = response.results.map(({id,name,species,gender,image}) => ({
+               this.setterLocalStorage(this.DATA_FETCHED_KEY, this.wholeCardsData = response.results.map(({id,name,species,gender,image, location}) => ({
                     id,
                     name,
                     species,
                     gender,
                     image,
+                    location: location.name,
                     price: this.getRandomValue()
                 }) ))
             } catch(error) {
