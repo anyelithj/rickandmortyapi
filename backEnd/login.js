@@ -38,7 +38,7 @@ var app = new Vue({
               }
             },
             validateCredentials(user, key) {
-
+              this.login();
               let loguedUser = [];
               let res = this.userCredentials.filter(
                 (usr) => usr.username === user && usr.password === key
@@ -49,6 +49,7 @@ var app = new Vue({
              
               if(loguedUser.length === 0){
                 this.message(
+                  'https://media2.giphy.com/media/jSQCODNIa6k5myYjyL/200w.webp',
                   "Oops",
                   2200,
                   "center",
@@ -58,6 +59,7 @@ var app = new Vue({
                 }else{
                   this.updateLocalStorage()
                   this.message(
+                    "https://media1.giphy.com/media/J1XU9sjU2K2pCluvXo/200w.webp",
                     "¡Enhorabuena!",
                     2200,
                     "center",
@@ -76,15 +78,18 @@ var app = new Vue({
                   
                   
             },
-            message(title, timer, position, text, icon) {
+            message(imageUrl,title, timer, position, text, icon) {
               Swal.fire({
+                imageUrl,
                 position,
                 text,
                 icon,
                 title,
                 showConfirmButton: false,
                 timer,
-              });},
+               
+            });
+          },
     },
     computed: {},
     created(){
