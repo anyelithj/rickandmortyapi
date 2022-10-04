@@ -38,7 +38,7 @@ var app = new Vue({
               }
             },
             validateCredentials(user, key) {
-
+              this.login();
               let loguedUser = [];
               let res = this.userCredentials.filter(
                 (usr) => usr.username === user && usr.password === key
@@ -46,6 +46,34 @@ var app = new Vue({
               loguedUser = [...res];
               this.loguedUser = [...res]
               console.log(this.loguedUser)
+<<<<<<< HEAD
+             
+              if(loguedUser.length === 0){
+                this.message(
+                  'https://media2.giphy.com/media/jSQCODNIa6k5myYjyL/200w.webp',
+                  "Oops",
+                  2200,
+                  "center",
+                  "Verifique que los datos sean correctos",
+                  "error"
+                );
+                }else{
+                  this.updateLocalStorage()
+                  this.message(
+                    "https://media1.giphy.com/media/J1XU9sjU2K2pCluvXo/200w.webp",
+                    "¡Enhorabuena!",
+                    2200,
+                    "center",
+                    "Ingreso exitoso",
+                    "success"
+                  ) ;
+                 
+                 
+    
+                  setTimeout(function() {location.href="./frontEnd/administrator.html"}, 2000);
+                }
+                
+=======
              if(loguedUser[0].type=='1'){
                 if(loguedUser.length === 0){
                     this.message(
@@ -95,21 +123,25 @@ var app = new Vue({
                     }
              }
               
+>>>>>>> e7771cf4525950fcc366cae0a43bbb0a5640f919
              
                 
       
                   
                   
             },
-            message(title, timer, position, text, icon) {
+            message(imageUrl,title, timer, position, text, icon) {
               Swal.fire({
+                imageUrl,
                 position,
                 text,
                 icon,
                 title,
                 showConfirmButton: false,
                 timer,
-              });},
+               
+            });
+          },
     },
     computed: {},
     created(){
