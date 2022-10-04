@@ -5,13 +5,13 @@ body{
     max-width:  45%;
     margin-top: 2%;
     background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
-    padding: 5% 10%;
+    padding: 2% 10%;
     opacity: 0.8;
    
 }
 #appTwo{
     background-color: black;
-    padding: 8%;
+  
 
 }
 #user img{
