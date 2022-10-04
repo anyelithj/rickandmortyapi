@@ -54,18 +54,11 @@ var app = new Vue({
                 "Verifique que los datos sean correctos",
                 "error"
               );
-              }else{
-              if(loguedUser[0].type=='1'){
+              loguedUser = [...res];
+              this.loguedUser = [...res]
+              console.log(this.loguedUser)
+             if(loguedUser[0].type=='1'){
                 if(loguedUser.length === 0){
-                  this.message(
-                    "Oops",
-                    2200,
-                    "center",
-                    "Verifique que los datos sean correctos",
-                    "error"
-                  );
-                  }else{
-                    this.updateLocalStorage()
                     this.message(
                       "https://media1.giphy.com/media/J1XU9sjU2K2pCluvXo/200w.webp",
                       "¡Enhorabuena!",
@@ -104,12 +97,7 @@ var app = new Vue({
           
                         setTimeout(function() {location.href="./frontEnd/main.html"}, 2000);
                       }
-              }
-            
-        
-              
-    
-                
+              }          
                 
           }},
           message(imageUrl,title, timer, position, text, icon)  {
