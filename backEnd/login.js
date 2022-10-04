@@ -127,7 +127,6 @@ var app = new Vue({
   },
   computed: {},
   created(){
-      this.userCredentials = JSON.parse(localStorage.getItem("users"));
-    
+      this.userCredentials = JSON.parse(localStorage.getItem("users")); 
   },
 });
