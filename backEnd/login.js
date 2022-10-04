@@ -58,7 +58,6 @@ var app = new Vue({
                 if(loguedUser[0].type=='1'){
                   if(loguedUser.length === 0){
                     this.message(
-                      'https://media2.giphy.com/media/jSQCODNIa6k5myYjyL/200w.webp',
                       "Oops",
                       2200,
                       "center",
@@ -107,7 +106,7 @@ var app = new Vue({
                         }
                 }
               
-             
+          
                 
       
                   

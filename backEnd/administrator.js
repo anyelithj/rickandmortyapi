@@ -8,15 +8,21 @@ var app = new Vue({
         password:"",
         rick:0,
         type:1,
+        error: false,
+        errors: {
+          username: false,
+          password: false,
+          rickcoins: false,
+          name: false,
+          rol: false
+        },
 
     },
     methods: {
         
 
         getData(){
-            this.users = JSON.parse(localStorage.getItem("users") || '[]')
-           
-          
+            this.users = JSON.parse(localStorage.getItem("users") || '[]')      
           },
             
         updateLocalStorage(){
@@ -35,9 +41,40 @@ var app = new Vue({
                 console.log(this.users)
                 this.updateLocalStorage()
         },
+        validations(){
+          if(this.name === "") {
+            this.errors.name = true;
+            this.error = true;
+          } else {
+            this.errors.name = false;
+          }
+          
+          if(this.username === "") {
+            this.errors.username = true;
+            this.error = true;
+          } else {
+            this.errors.username = false;
+          } 
 
-
-           
+          if(this.password === "") {
+            this.errors.password = true;
+            this.error = true;
+          } else {
+            this.errors.password = false;
+          }
+          if(this.rick === "" || this.rick<=0 || typeof this.rick !== "number") {
+            this.errors.rickcoins = true;
+            this.error = true;
+          } else {
+            this.errors.rickcoins = false;
+          }
+           if(this.type === "" || this.type<=0 || typeof this.type !== "number") {
+            this.errors.rol = true;
+            this.error = true;
+          } else {
+            this.errors.rol = false;
+          }
+        }, 
             message(title, timer, position, text, icon) {
               Swal.fire({
                 position,
