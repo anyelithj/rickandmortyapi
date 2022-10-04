@@ -4,7 +4,7 @@ var app = new Vue({
       username:"",
       users:[],
       password:"",
-      userCredentials:[{username:"admin",password:"admin",rick:0,name:"Oscar",type:1}],
+      userCredentials:[{username:"admin",password:"admin",rick:0,name:"Oscar",type:"1",cards:[]}],
       loguedUser:[],
       error:false,
       error2:false,
@@ -28,8 +28,8 @@ var app = new Vue({
             },
             
              updateLocalStorage(){
-              localStorage.setItem("userLoged", JSON.stringify(this.arrayData))
               localStorage.setItem("users", JSON.stringify(this.userCredentials))
+              localStorage.setItem("userLoged", JSON.stringify(this.loguedUser))
              },
              login() {
               this.getError();
@@ -46,6 +46,7 @@ var app = new Vue({
               loguedUser = [...res];
               this.loguedUser = [...res]
               console.log(this.loguedUser)
+<<<<<<< HEAD
              
               if(loguedUser.length === 0){
                 this.message(
@@ -72,6 +73,57 @@ var app = new Vue({
                   setTimeout(function() {location.href="./frontEnd/administrator.html"}, 2000);
                 }
                 
+=======
+             if(loguedUser[0].type=='1'){
+                if(loguedUser.length === 0){
+                    this.message(
+                      "Oops",
+                      2200,
+                      "center",
+                      "Verifique que los datos sean correctos",
+                      "error"
+                    );
+                    }else{
+                      this.updateLocalStorage()
+                      this.message(
+                        "¡Enhorabuena!",
+                        2200,
+                        "center",
+                        "Ingreso exitoso",
+                        "success"
+                      ) ;
+                     
+                     
+        
+                      setTimeout(function() {location.href="./frontEnd/administrator.html"}, 2000);
+                    }
+                    
+             } else if(loguedUser[0].type=='2'){
+                if(loguedUser.length === 0){
+                    this.message(
+                      "Oops",
+                      2200,
+                      "center",
+                      "Verifique que los datos sean correctos",
+                      "error"
+                    );
+                    }else{
+                      this.updateLocalStorage()
+                      this.message(
+                        "¡Enhorabuena!",
+                        2200,
+                        "center",
+                        "Ingreso exitoso",
+                        "success"
+                      ) ;
+                     
+                     
+        
+                      setTimeout(function() {location.href="./frontEnd/main.html"}, 2000);
+                    }
+             }
+              
+>>>>>>> e7771cf4525950fcc366cae0a43bbb0a5640f919
              
                 
       
@@ -93,7 +145,7 @@ var app = new Vue({
     },
     computed: {},
     created(){
-        this.arrayData = JSON.parse(localStorage.getItem("data"));
+        this.userCredentials = JSON.parse(localStorage.getItem("users"));
       
     },
   });

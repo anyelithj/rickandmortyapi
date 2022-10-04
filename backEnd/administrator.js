@@ -2,12 +2,10 @@ var app = new Vue({
     el: "#app",
     
     data: {
-        userCredentials:[{username:"admin",password:"admin",rick:0,name:"Oscar",type:"administrador"}],
         users:[],
         name:"",
         username:"",
         password:"",
-        typeUser:"",
         rick:0,
         type:1,
 
@@ -16,24 +14,26 @@ var app = new Vue({
         
 
         getData(){
-
-            this.user = JSON.parse(localStorage.getItem("user") || '[]')
+            this.users = JSON.parse(localStorage.getItem("users") || '[]')
+           
+          
           },
             
         updateLocalStorage(){
             localStorage.setItem("users", JSON.stringify(this.users))
         },
         register(){
+        
             this.users.push({
                 name: this.name,
-                option:this.option,
-                sells: this.sells,
-                commission: this.commission,
-                bonus: this.bonus,
-                sellPrice:this.sellPrice,
-                total:this.total,
+                username:this.username,
+                password: this.password,
+                type: this.type,
+                rick: this.rick,
+                cards: []
                 });
-                this.updateLocalStorage();
+                console.log(this.users)
+                this.updateLocalStorage()
         },
 
 
