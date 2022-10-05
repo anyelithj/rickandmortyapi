@@ -8,14 +8,19 @@
   <title>Regalar card</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-  <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/eb9c72ba98.js" crossorigin="anonymous"></script>  
   <link rel="stylesheet" href="../frontEnd/css/giveAwayCard.css">
 
 <body>
 
   ​ <div class="container " id="app">
     <div class="row file-1">
-      <div class="col text-center">
+      <div class="col-1">
+        
+          <a href="./menuMain.html"><i class='fa-solid fa-arrow-right-from-bracket icon ps-3' style=color:rgb(255,255,255)></i> </a>
+        
+      </div>
+      <div class="col-10 text-center">
         <a href="https://ibb.co/4YhCkBz"><img class="image" src="https://i.ibb.co/jWnqt7m/pngwing-com-1.png"
             alt="pngwing-com-1"></a>
       </div>
@@ -27,7 +32,7 @@
     </div>
     <div class="row file-3">
 
-      <div class="col-sm-12 col-lg-6 col-xs-12 justify-content-center" v-for="item in loguedUser.cards">
+      <div class="col-sm-12 col-lg-6 col-xs-12 justify-content-center" v-for="item in loguedUser[0].cards">
         <div class="card mb-3" style="max-width: 540px;">
           <div class="row g-0">
             <div class="col-md-4 ">
@@ -44,7 +49,7 @@
 
                 <div class="button1">
                   <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    obsequiar
+                    Obsequiar
                   </button>
                 </div>
               </div>

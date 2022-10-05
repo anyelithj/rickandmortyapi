@@ -8,15 +8,20 @@
     <title>Historial card</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-    <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/eb9c72ba98.js" crossorigin="anonymous"></script>  
     <link rel="stylesheet" href="../frontEnd/css/shoppingHistory.css">
 
 <body>
 
     ​ <div class="container border-white border border-3 " id="app">
         <div class="row file1">
-            <div class="col text-center ">
-                <i class="fa-thin fa-arrow-right-from-arc"></i>
+            <div class="col-1">
+                
+                    <a href="./buyCard.html"><i class='fa-solid fa-arrow-right-from-bracket icon ps-3' style=color:rgb(255,255,255)></i> </a>
+                  
+            </div>
+            <div class="col-10 text-center">
+                <a href="https://ibb.co/sPbVD0t"><img src="https://i.ibb.co/wLBzb9Y/pngwing-com.png" alt="pngwing-com" /></a>
             </div>
         </div>
         <div class="row file2">
@@ -39,8 +44,8 @@
                                 
                             </tr>
                         </thead>
-                        <tbody v-if="loguedUser.history.length">
-                            <tr class="body" v-for="(item,index)  in  loguedUser.history">
+                        <tbody v-if="loguedUser[0].history.length">
+                            <tr class="body" v-for="(item,index)  in  loguedUser[0].history">
 
 
                                 <td ><img :src="item.image"class="rounded-circle" alt=""></td>
@@ -55,7 +60,7 @@
                         </tbody>
                         <tbody v-else >
                             <tr>
-                                <td class="text-center d-flex justify-content-center">Tu lista de vehículos está vacía</td>
+                                <td class="text-center d-flex justify-content-center">Tu lista de compras está vacía</td>
                             </tr>
                         </tbody>
                         
