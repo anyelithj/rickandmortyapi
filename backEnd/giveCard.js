@@ -36,8 +36,6 @@ var app = new Vue({
          this.test4 = test4
           
         
-
-      
           
       },
       updateLocalStorage(){
@@ -69,14 +67,27 @@ var app = new Vue({
         this.users.push(test)
         this.users.push(test2)
 
-       
-        this.updateLocalStorage()
-        
-      }
-
-      
+        this.updateLocalStorage() 
+        this.message(
+          "🥳",
+          2200,
+          "center",
+          "La carta ha sido enviada",
+          "success"
+        );
+        setTimeout(function() {location.href="../frontEnd/giveAwayCard.html"}, 2000);
+      },
+      message(title, timer, position, text, icon)  {
+        Swal.fire({
+          position,
+          text,
+          icon,
+          title,
+          showConfirmButton: false,
+          timer,
          
-           
+      });
+    },         
   },
   computed: {},
   created(){
