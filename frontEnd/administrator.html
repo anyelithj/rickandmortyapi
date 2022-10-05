@@ -35,7 +35,7 @@
       <div class="row mb-2">
         <div class="col">
           <label for="rickcoins" class="form-label text-muted">RickCoins</label>
-          <input v-model="rick" id="rickcoins" class="form-control" type="number" placeholder="RickCoins">
+          <input v-model.number="rick" id="rickcoins" class="form-control" type="number" placeholder="RickCoins">
           <span class="error" v-if="errors.rickcoins" style="color: red;">Por favor ingrese un rickcoins</span>
         </div>
       </div>
