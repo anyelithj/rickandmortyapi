@@ -7,7 +7,7 @@ body{
 #app{
     max-width:  90%;
    box-shadow: inset;
-   
+    color: black;
     border: 5% black solid;
 
 }
@@ -70,39 +70,58 @@ body{
 
     }
 
-    .button1 button{
-        border: none;
-        background-color: #68c61a;
-        width: 100%;
-        border-radius: 5px;
-        font-size: 39px;
-      
-    }
-    .button1 button:hover{
-        background-color: white !important;
-        border-radius: 5px;
-        width:100% ;
-    }
+.button1 button{
+    border: none;
+    background-color: #68c61a;
+    width: 100%;
+    border-radius: 5px;
+    font-size: 28px;
+    
+}
+.button1 button:hover{
+    background-color: white !important;
+    border-radius: 5px;
+    width:100% ;
+}
 
 .image{
-    margin: -2%;
-    width: 24%;
+    margin: -3%;
+    width: 22%;
     align-items: center;
     justify-content: center;
 }
-.button2 button{
+.modal-footer .button1{
     border: none;
-    background-color: #fff;
-    text-align: center;
-    border-radius: 5px;
-    font-size: 20px;
-    width:100% ;
-    padding: 1%;
-   
-}
-.button2 button:hover{
     background-color: rgb(69, 71, 77);
+    width: 45%;
+    padding: 2%;
     border-radius: 5px;
-    width:100% ;
-    
+    font-size: 15px;
+    align-items: center;
+}
+.modal-footer .button2{
+    border: none;
+    background-color: #68c61a;
+    border-color: black;
+    width: 45%;
+    padding: 2%;
+    border-radius: 5px;
+    font-size: 15px;
+    align-items: center;
+
+}
+.modal-footer .button2:hover{
+    border: none;
+    background-color: #02b1c8;
+    border-right: 1%;
+    width: 45%;
+    padding: 2%;
+    border-radius: 5px;
+    font-size: 15px;
+    align-items: center;
+
+}
+.modal .modal-dialog{
+    align-items: center;
+    text-align: center;
 }
