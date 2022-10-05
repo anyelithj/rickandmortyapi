@@ -32,8 +32,8 @@ var app = new Vue({
         register(){
           this.validations() ? 
           this.error
-           : 
-            this.users.push({
+          : 
+          this.users.push({
                 name: this.name,
                 username:this.username,
                 password: this.password,
