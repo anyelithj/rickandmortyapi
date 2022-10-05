@@ -87,7 +87,7 @@ body{
 
 
 .image{
-    margin: -2%;
+    margin: -1%;
     width: 37%;
     align-items: center;
     justify-content: center;
@@ -107,4 +107,8 @@ body{
     border-radius: 5px;
     width:100% ;
     
+}
+.container i{
+   margin: -5%;
+
 }

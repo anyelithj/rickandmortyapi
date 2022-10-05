@@ -30,7 +30,7 @@ var app = new Vue({
             localStorage.setItem("users", JSON.stringify(this.users))
         },
         register(){
-          this.validations()? 
+          this.validations() ? 
           this.error
            : 
             this.users.push({
@@ -39,6 +39,7 @@ var app = new Vue({
                 password: this.password,
                 type: this.type,
                 rick: this.rick,
+                history:[],
                 cards: []
                 });
                 this.updateLocalStorage()
