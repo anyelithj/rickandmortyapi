@@ -6,11 +6,7 @@ body{
     border-width: 40%;
     border-color: #fff;
 }
-.file1 img{
-    width: 40%;
-    margin: 1%;
-   
-}
+
 
 .title{    
     text-align: center;
@@ -27,4 +23,7 @@ body{
 }
 .table th{
     color: #000;
+}
+.container .file-1 a img{
+    width: 45%;
 }
