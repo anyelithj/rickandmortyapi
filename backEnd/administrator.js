@@ -32,8 +32,10 @@ var app = new Vue({
         register(){
           this.validations() ? 
           this.error
-          : 
-          this.users.push({
+          // this.message('https://media2.giphy.com/media/jSQCODNIa6k5myYjyL/200w.webp',"Oops",2200,"center", "Verifique que los datos sean correctos", "error");
+
+           : 
+            this.users.push({
                 name: this.name,
                 username:this.username,
                 password: this.password,
@@ -74,13 +76,6 @@ var app = new Vue({
           } else {
             this.errors.rickcoins = false;
           }
-           if(this.type === "") {
-            this.errors.rol = true;
-            this.error = true;
-          } else {
-            this.errors.rol = false;
-          }
-          // this.message('https://media2.giphy.com/media/jSQCODNIa6k5myYjyL/200w.webp',"Oops",2200,"center", "Verifique que los datos sean correctos", "error");
         }, 
         clear(){
           this.name = "",

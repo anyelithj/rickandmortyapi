@@ -17,6 +17,11 @@ new Vue({
         this.fetchingDataFromApi()
         this.wholeRegisteredUsers = this.getterParsedLocalStorage(this.USERS_REGISTERED)
         this.currentLoguedUser = this.getterParsedLocalStorage(this.CURRENT_USER_LOGUED)
+<<<<<<< HEAD
+=======
+       
+
+>>>>>>> 311ed1a88bf6b11888ac00c0c9d7478b543f4612
     },
     methods: {
         setterLocalStorage(key, data){
