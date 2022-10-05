@@ -7,6 +7,7 @@ var app = new Vue({
         username:"",
         password:"",
         rick:0,
+        optionType: "",
         type:1,
         error: false,
         errors: {
@@ -29,7 +30,9 @@ var app = new Vue({
             localStorage.setItem("users", JSON.stringify(this.users))
         },
         register(){
-          this.validations()? this.error : 
+          this.validations()? 
+          this.error
+           : 
             this.users.push({
                 name: this.name,
                 username:this.username,
@@ -39,6 +42,8 @@ var app = new Vue({
                 cards: []
                 });
                 this.updateLocalStorage()
+                this.clear()
+                // this.message("https://media1.giphy.com/media/J1XU9sjU2K2pCluvXo/200w.webp","¡Enhorabuena!", 2200, "center","Ingreso exitoso","success") ;
                
         },
         validations(){
@@ -62,28 +67,39 @@ var app = new Vue({
           } else {
             this.errors.password = false;
           }
-          if(this.rick === "" || this.rick<=0 || typeof this.rick !== "number") {
+          if(this.rick === "" || this.rick<=0 ) {
             this.errors.rickcoins = true;
             this.error = true;
           } else {
             this.errors.rickcoins = false;
           }
-           if(this.type === "" || this.type<=0 || typeof this.type !== "number") {
+           if(this.type === "") {
             this.errors.rol = true;
             this.error = true;
           } else {
             this.errors.rol = false;
           }
+          // this.message('https://media2.giphy.com/media/jSQCODNIa6k5myYjyL/200w.webp',"Oops",2200,"center", "Verifique que los datos sean correctos", "error");
         }, 
-            message(title, timer, position, text, icon) {
-              Swal.fire({
-                position,
-                text,
-                icon,
-                title,
-                showConfirmButton: false,
-                timer,
-              });},
+        clear(){
+          this.name = "",
+          this.username = "",
+          this.password = "",
+          this.type = "",
+          this.rick = ""
+        },
+        message(imageUrl,title, timer, position, text, icon)  {
+          Swal.fire({
+            imageUrl,
+            position,
+            text,
+            icon,
+            title,
+            showConfirmButton: false,
+            timer,
+           
+        });
+      },
     },
     computed: {},
     created(){

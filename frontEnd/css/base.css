@@ -28,9 +28,8 @@ a:hover {
     background-color: rgb(69, 71, 77);
     color: #02b1c8;
     font-family: 'Gemunu Libre', sans-serif;
-    font-size: 85%;
     border-color: black; 
     font-weight: 900;
-    font-size: 1.4rem;
+    font-size: 1rem;
     font-family: 'Peralta', cursive;
 }
