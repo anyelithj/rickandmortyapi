@@ -24,8 +24,6 @@ new Vue({
         payment(value) {
             this.validations()? this.error:
             this.rechargedValue = value;
-            console.log(this.rechargedValue )
-            this.rechargedValue = "";
         },
         validations(){
             if(this.optionPayment === "") {
