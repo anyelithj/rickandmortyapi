@@ -36,10 +36,7 @@ var app = new Vue({
                 });
                 console.log(this.users)
                 this.updateLocalStorage()
-        },
-
-
-           
+        },    
             message(title, timer, position, text, icon) {
               Swal.fire({
                 position,
