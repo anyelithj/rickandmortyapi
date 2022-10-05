@@ -1,5 +1,10 @@
 body{
-    background: url(https://www.wallpaperuse.com/wallp/41-410895_m.png)100% 50%/cover no-repeat ;}
+    background-image: url(https://www.wallpaperuse.com/wallp/41-410895_m.png) ;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+
+}
     
 #app{
     max-width:  45%;
@@ -22,6 +27,20 @@ body{
 #appTwo h2, label{
     color: white;
 }
+.button1 button{
+    border: none;
+    background-color: #68c61a;
+    width: 100%;
+    border-radius: 5px;
+    font-size: 20px;
+    
+}
+.button1 button:hover{
+    background-color: white !important;
+    border-radius: 5px;
+    width:100% ;
+}
+
 
 
 
