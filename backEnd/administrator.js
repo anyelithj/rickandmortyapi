@@ -75,6 +75,8 @@ var app = new Vue({
             this.errors.rol = false;
           }
         }, 
+
+        
             message(title, timer, position, text, icon) {
               Swal.fire({
                 position,
