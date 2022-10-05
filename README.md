@@ -18,7 +18,7 @@ https://github.com/anyelithj/rickandmortyapi.git
 ```
 
 ## Link Despliegue
-
+https://rickandmortyapi-sepia.vercel.app/
 
 ## Tecnologias usadas
 `VUE/ BOOTSTRAP/ CSS`
