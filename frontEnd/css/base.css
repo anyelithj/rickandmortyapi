@@ -17,19 +17,45 @@ a:hover {
     border-radius: 5px;
     padding: 5px 30px;
     background-color: #68c61a;  
+    font-family: 'Gemunu Libre', sans-serif; 
+    font-size: 1.2rem;
 }
 
 .button:hover{
     background-color: white;
-    color:black;
+    color: #02b1c8;
     border: 1px solid black;
+}
+.cards {
+    display: flex;
+    flex-direction: column;
 }
 .card {
     background-color: rgb(69, 71, 77);
+    width: 22rem;
     color: #02b1c8;
-    font-family: 'Gemunu Libre', sans-serif;
     border-color: black; 
     font-weight: 900;
     font-size: 1rem;
     font-family: 'Peralta', cursive;
 }
+.box-price {
+    background-color: rgb(69, 71, 77);
+    border-radius: 5px;
+}
+.box-title {
+    color:  #02b1c8; 
+    font-family: 'Peralta', cursive;
+}
+.img-menu {
+    width:300px;
+    height:300px;
+}
+
+ @media (min-width: 1440px) {
+    .cards {
+        display: flex;
+        flex-direction: row;
+    }  
+ }
+ 
