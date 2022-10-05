@@ -5,6 +5,7 @@ new Vue({
         currentLoguedUser: {},
         wholeRegisteredUsers: [],
         rechargedValue :0,
+        optionPayment: "",
         entityToPay: ['Nequi', 'Efecty'],
         quantityPayedForCard: "",
         wholeCardsData: [],
@@ -16,18 +17,29 @@ new Vue({
         this.fetchingDataFromApi()
         this.wholeRegisteredUsers = this.getterParsedLocalStorage(this.USERS_REGISTERED)
         this.currentLoguedUser = this.getterParsedLocalStorage(this.CURRENT_USER_LOGUED)
-       
-
     },
     methods: {
+        payment(value) {
+            this.rechargedValue = value;
+            console.log(this.rechargedValue )
+            this.rechargedValue = "";
+        },
         setterLocalStorage(key, data){
             localStorage.setItem(key, JSON.stringify(data))
         },
         getterParsedLocalStorage(key) {
             return JSON.parse(localStorage.getItem(key) || "[]")
         },
-        updateLocalStorage(){
-            localStorage.setItem( "userLoged", JSON.stringify(this.test))
+        message(icon,title, timer, position, text, button) {
+            swal({
+              position,
+              text,
+              icon,
+              title,
+              dangerMode: false,
+              timer,
+              button,
+            })
         },
         getRandomValue(min = 100, max = 700){
             min = Math.ceil(min)
@@ -53,31 +65,37 @@ new Vue({
                 console.log(error)
             }
         },
-        btn(a,b){
-            console.log(a);
-            console.log(b);
-        },
-        buyCards( card, user ){
-            if(user[0].rick > card.price) {
-                console.log('¡Compra exitosa. Ahora tienes una nueva card!')
+        buyCards( card ){
+
+            let singleLogued = this.wholeRegisteredUsers.filter(users =>  this.currentLoguedUser[0].username ===  users.username  )
+
+            let restUsers = this.wholeRegisteredUsers.filter(users =>  singleLogued[0].username !==  users.username  )
+            this.wholeRegisteredUsers = [...restUsers]
+
+            this.setterLocalStorage(this.USERS_REGISTERED, this.wholeRegisteredUsers)
+
+            if(singleLogued[0].rick > card.price) {
+                this.message('success','!Enhorabuena!',2000, 'center','¡Compra exitosa. Ahora tienes una nueva card!',false)
                 let discount = card.price
 
-                    user[0].cards.push(card) 
-                    user[0].history.push(card) 
-                    user[0].rick -= discount
-                    console.log(user[0].rick);
-                    this.test = user[0]
-                    alert(this.test)
-                    this.updateLocalStorage()
-                    console.log(this.test);
+                    singleLogued[0].cards.push(card) 
+                    singleLogued[0].history.push(card) 
+                    singleLogued[0].rick -= discount
+
+                    this.setterLocalStorage(this.CURRENT_USER_LOGUED, singleLogued)
+                   
+                    const [userWithDiscount] = singleLogued
                     
+                    this.wholeRegisteredUsers.push(userWithDiscount)
+                    this.setterLocalStorage(this.USERS_REGISTERED, this.wholeRegisteredUsers)
+               
             } else{
-                console.log('Saldo insuficiente. Por favor recargue su cuenta.');
+                this.message('warning','Oops',2000, 'center','Saldo insuficiente. Por favor recargue su cuenta.',false)
                 
             }
-           
+            
         },
-        rechargeRickCoins(value,...user){
+        rechargeRickCoins(value, user){
             let res = user.map(usr => {
                 return{
                     ...usr,
@@ -85,8 +103,9 @@ new Vue({
                 } 
             })
             let [userUpdated] = res
+            this.test.push(userUpdated) 
+            this.setterLocalStorage(this.CURRENT_USER_LOGUED,this.test)
             
-        },
-        
+        }
     }
 })

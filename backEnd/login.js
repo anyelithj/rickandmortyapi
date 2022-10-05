@@ -29,6 +29,7 @@ var app = new Vue({
            updateLocalStorage(){
             localStorage.setItem("users", JSON.stringify(this.userCredentials))
             localStorage.setItem("userLoged", JSON.stringify(this.loguedUser))
+           
            },
            login() {
             this.getError();
@@ -45,15 +46,16 @@ var app = new Vue({
             );
             loguedUser = [...res];
             this.loguedUser = [...res]
+            
             console.log(this.loguedUser)
             if(loguedUser.length === 0){
               this.message('https://media2.giphy.com/media/jSQCODNIa6k5myYjyL/200w.webp',"Oops",2200,"center", "Verifique que los datos sean correctos", "error");
               }else{
+                this.updateLocalStorage()
               if(loguedUser[0].type=='1'){
                 if(loguedUser.length === 0){
                   this.message("Oops", 2200,"center","Verifique que los datos sean correctos","error");
                   }else{
-                    this.updateLocalStorage()
                     this.message("https://media1.giphy.com/media/J1XU9sjU2K2pCluvXo/200w.webp","¡Enhorabuena!", 2200, "center",
                       "Ingreso exitoso",
                       "success"
@@ -114,8 +116,6 @@ var app = new Vue({
       
     }else{
       this.userCredentials = JSON.parse(localStorage.getItem("users"));
-  
     }
-    
   },
 });
