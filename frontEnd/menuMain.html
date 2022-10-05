@@ -11,37 +11,45 @@
 </head>
 <body>
     <div id="app" class="container w-75 mt-5">
+      <div>
+        <a href="../index.html"><i class='fa-solid fa-arrow-right-from-bracket ps-3' style="color:rgb(255,255,255)"></i> </a>
+      </div>
         <div class="d-flex justify-content-end flex-row mx-2 h2">
-          <span class="text-white px-2">{{loguedUser[0].username}}</span>
-          <span class="text-white px-2">{{showFormatedNumber(loguedUser[0].rick)}}</span>
+          <span class="px-2 box-title">{{loguedUser[0].username}}</span>
+          <span class="text-white px-2 box-price">{{showFormatedNumber(loguedUser[0].rick)}}</span>
         </div>
-        <div class="d-flex justify-content-around my-5">
-            <div class="card text-center" style="width: 22rem">
+        <div class="card-group cards my-5">
+            <div class="card m-3">
                 <div class="card-body">
-                  <h5 class="card-title mt-2 mb-3 h3">Comprar RickCoins</h5>
-                  <img src="https://inkfish.in/wp-content/uploads/2020/03/Rick-and-morty-full-card.png" width="300px" height="300px" alt="Imagen The Rick and Morty">
-                  <div class="d-grid gap-2 mb-3 mt-5">
+                  <h5 class="card-title text-center mt-2 mb-3 h4">Comprar RickCoins</h5>
+                  <div class="text-center mt-5">
+                    <img class="img-menu" src="https://inkfish.in/wp-content/uploads/2020/03/Rick-and-morty-full-card.png" width="300px" height="300px" alt="Imagen The Rick and Morty">
+                  </div>
+                  <div class="d-grid gap-2 mb-3 mt-5 text-center">
                     <a href="rechargeRickPoints.html" class="button">Ingresar</a>
                   </div>
                 </div>
               </div>
               
-              <div class="card text-center" style="width: 22rem;">
+              <div class="card m-3">
                 <div class="card-body">
-                  <h5 class="card-title mt-2 mb-3 h3">Comprar Card</h5>
-                  <img src="https://cdn.shopify.com/s/files/1/1633/7907/products/Rick_and_Morty_Playing_Cards_1_720x720.png?v=1578088669" width="300px" height="300px" alt="Imagen The Rick and Morty">
-                  <div class="d-grid gap-2 mb-3 mt-5">
-                    <a href="buyCard.html" class="button">Ingresar</a>
+                  <h5 class="card-title mt-2 mb-3 h4 text-center">Comprar Card</h5>
+                  <div class="text-center mt-5">
+                    <img class="img-menu" src="https://cdn.shopify.com/s/files/1/1633/7907/products/Rick_and_Morty_Playing_Cards_1_720x720.png?v=1578088669" width="300px" height="300px" alt="Imagen The Rick and Morty">
+                  </div>
+                  <div class="d-grid gap-2 mb-3 mt-5 text-center">
+                    <a href="./buyCard.html" class="button">Ingresar</a>
                   </div>
                 </div>
               </div>
-              
-              <div class="card text-center" style="width: 22rem;">
-                <div class="card-body card">
-                  <h5 class="card-title mt-2 mb-3 h3">Regalar Card</h5>
-                  <img src="https://www.fandomandfantasy.com/uploads/1/0/1/4/101471646/s159139111352177715_p34_i3_w1711.png" width="300px" height="300px" alt="Imagen The Rick and Morty">
-                  <div class="button mt-5">
-                    <a href="giveAwayCard.html" class="btn text-white">Ingresar</a>
+              <div class="card m-3">
+                <div class="card-body">
+                  <h5 class="card-title mt-2 mb-3 h4 text-center">Regalar Card</h5>
+                  <div class="text-center mt-5">
+                    <img class="img-menu" src="https://www.fandomandfantasy.com/uploads/1/0/1/4/101471646/s159139111352177715_p34_i3_w1711.png" alt="Imagen The Rick and Morty">
+                  </div>
+                  <div class="d-grid gap-2 mb-3 mt-5 text-center">
+                    <a href="giveAwayCard.html" class="button">Ingresar</a>
                   </div>
                 </div>
               </div>

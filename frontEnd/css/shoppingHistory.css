@@ -8,15 +8,14 @@ body{
 }
 .file1 img{
     width: 40%;
-    margin: -3%;
+    margin: 1%;
    
 }
 
 .title{    
     text-align: center;
-    margin-top: 3%;
     font-family: 'Peralta', cursive;
-    color: #fff;
+    color:  #68c61a;
   
 }
 .table{
@@ -25,4 +24,7 @@ body{
 }
 .table img{
     width: 15%;
+}
+.table th{
+    color: #000;
 }

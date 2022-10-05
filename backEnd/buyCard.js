@@ -4,11 +4,12 @@ new Vue({
         test: [],
         currentLoguedUser: {},
         wholeRegisteredUsers: [],
-        rechargedValue :0,
         optionPayment: "",
         entityToPay: ['Nequi', 'Efecty'],
         quantityPayedForCard: "",
         wholeCardsData: [],
+        error: false,
+        errorPayment: false,
         CURRENT_USER_LOGUED: "userLoged",
         USERS_REGISTERED: "users",
         DATA_FETCHED_KEY: "data-api"
@@ -61,6 +62,7 @@ new Vue({
             }
         },
         buyCards( card ){
+
             let singleLogued = this.wholeRegisteredUsers.filter(users =>  this.currentLoguedUser[0].username ===  users.username  )
 
             let restUsers = this.wholeRegisteredUsers.filter(users =>  singleLogued[0].username !==  users.username  )
@@ -88,15 +90,7 @@ new Vue({
             }
         },
         rechargeRickCoins(value){
-            let res = user.map(usr => {
-                return{
-                    ...usr,
-                    rick: usr.rick += value
-                } 
-            })
-            let [userUpdated] = res
-            this.test.push(userUpdated) 
-            this.setterLocalStorage(this.CURRENT_USER_LOGUED,this.test)
+
             let singleLogued = this.wholeRegisteredUsers.filter(users =>  this.currentLoguedUser[0].username ===  users.username  )
 
             let restUsers = this.wholeRegisteredUsers.filter(users =>  singleLogued[0].username !==  users.username  )
@@ -104,23 +98,20 @@ new Vue({
 
             this.setterLocalStorage(this.USERS_REGISTERED, this.wholeRegisteredUsers)
 
-            if(singleLogued[0].rick > card.price) {
-                this.message('success','!Enhorabuena!',2000, 'center','¡Compra exitosa. Ahora tienes una nueva card!',false)
-                let discount = card.price
-
-                    singleLogued[0].cards.push(card) 
-                    singleLogued[0].history.push(card) 
-                    singleLogued[0].rick -= discount
+            if(value > 99) {
+                this.message('success','!Enhorabuena!',2000, 'center',`Recarga exitosa. Has recargado ${value} RickCoins !`,false)
+                   
+                    singleLogued[0].rick += value
 
                     this.setterLocalStorage(this.CURRENT_USER_LOGUED, singleLogued)
                    
-                    const [userWithDiscount] = singleLogued
+                    const [userRechargeUpdated] = singleLogued
                     
-                    this.wholeRegisteredUsers.push(userWithDiscount)
+                    this.wholeRegisteredUsers.push(userRechargeUpdated)
                     this.setterLocalStorage(this.USERS_REGISTERED, this.wholeRegisteredUsers)
                
             } else{
-                this.message('warning','Oops',2000, 'center','Saldo insuficiente. Por favor recargue su cuenta.',false)
+                this.message('warning','Oops',2000, 'center','Monto inválido. Por favor ingresa un valor mayor o igual a 100.',false)
           }
         }
     }
