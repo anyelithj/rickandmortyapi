@@ -70,7 +70,6 @@ body{
 
     }
 
-<<<<<<< HEAD
     .button1 button{
         border: none;
         background-color: #68c61a;
@@ -84,18 +83,6 @@ body{
         border-radius: 5px;
         width:100% ;
     }
-=======
-.button1{
-    border: none;
-    background-color: #68c61a;
-    border-radius: 5px;
-  
-}
-.button1:hover{
-    background-color: white;
-    color:black;
-}
->>>>>>> ff9bbf8fcbec2ab2f431db8a6d8f97c0fb4c294c
 
 .image{
     margin: -2%;
