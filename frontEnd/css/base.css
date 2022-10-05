@@ -31,12 +31,7 @@ a:hover {
     font-size: 1.5rem;
     padding: 5px 20px;
 }
-.btn-secondary:hover{
-    background-color: white;
-    color: #02b1c8;
-    border: 1px solid black;
-    background-color: rgb(69, 71, 77);
-}
+
 .cards {
     display: flex;
     flex-direction: column;
@@ -45,6 +40,13 @@ a:hover {
    font-size: 3rem;
    color: #fff; 
 } 
+.title-main{
+    text-align: center;
+    margin-top: 3%;
+    font-family: 'Peralta', cursive;
+    font-size: 600%;
+    color:  #68c61a;
+}
 .card {
     background-color: rgb(69, 71, 77);
     width: 22rem;

@@ -42,9 +42,9 @@ var app = new Vue({
               history:[],
               cards: []
               });
+              this.message("https://media1.giphy.com/media/J1XU9sjU2K2pCluvXo/200w.webp","¡Enhorabuena!", 2200, "center","Ingreso exitoso","success") ;
               this.updateLocalStorage()
               this.clear()
-              // this.message("https://media1.giphy.com/media/J1XU9sjU2K2pCluvXo/200w.webp","¡Enhorabuena!", 2200, "center","Ingreso exitoso","success") ;
              
       },
       validations(){

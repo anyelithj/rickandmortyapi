@@ -9,6 +9,8 @@ new Vue({
         entityToPay: ['Nequi', 'Efecty'],
         quantityPayedForCard: "",
         wholeCardsData: [],
+        error: false,
+        errorPayment: false,
         CURRENT_USER_LOGUED: "userLoged",
         USERS_REGISTERED: "users",
         DATA_FETCHED_KEY: "data-api"
@@ -20,9 +22,18 @@ new Vue({
     },
     methods: {
         payment(value) {
+            this.validations()? this.error:
             this.rechargedValue = value;
             console.log(this.rechargedValue )
             this.rechargedValue = "";
+        },
+        validations(){
+            if(this.optionPayment === "") {
+                this.errorPayment = true;
+                this.error = true;
+              } else {
+                this.errorPayment = false;
+              }
         },
         setterLocalStorage(key, data){
             localStorage.setItem(key, JSON.stringify(data))
