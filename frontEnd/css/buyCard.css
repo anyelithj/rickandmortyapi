@@ -22,7 +22,7 @@ body{
 }
 .card-body{
     background-color: rgb(69, 71, 77);
-    color: #02b1c8;
+    color: #fff;
     font-family: 'Gemunu Libre', sans-serif;
     font-size: 85%;
     border-color: black;
@@ -43,24 +43,26 @@ body{
 }
 /* Titulo de tarjeta */
 .card h3{
-    color: #02b1c8;
+    color: greenyellow;
     font-weight: 900;
     font-size: 1.3rem;
     font-family: 'Peralta', cursive;
 
 }
 .card-text-1:hover{
-    color: greenyellow;
+color: #02b1c8;
 }
 
 .card h3:hover{
-    color: greenyellow;
+   
+color: #02b1c8;
+    
 }
 .card-text-3:hover{
-    color: greenyellow;
+color: #02b1c8;
 }
 .card-text-5:hover{
-    color: greenyellow;
+color: #02b1c8;
 }
 
 
@@ -79,14 +81,16 @@ body{
       
     }
     .button1 button:hover{
+        color: #02b1c8 !important;
         background-color: white !important;
         border-radius: 5px;
         width:100% ;
+        border:1px solid black  !important;
     }
 
 .image{
-    margin: -2%;
-    width: 24%;
+    margin: -1%;
+    width: 37%;
     align-items: center;
     justify-content: center;
 }
@@ -104,5 +108,10 @@ body{
     background-color: rgb(69, 71, 77);
     border-radius: 5px;
     width:100% ;
+    color: #fff;
     
+}
+.container i{
+   margin: -5%;
+
 }

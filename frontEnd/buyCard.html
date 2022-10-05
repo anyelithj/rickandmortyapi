@@ -8,16 +8,23 @@
   <title>Comprar card</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-  <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="../frontEnd/css/buyCard.css">
+  <script src="https://kit.fontawesome.com/eb9c72ba98.js" crossorigin="anonymous"></script>  <link rel="stylesheet" href="../frontEnd/css/buyCard.css">
 
 <body>
 
   ​ <div class="container " id="app">
+    
+
     <div class="row">
-      <div class="col text-center">
+      <div class="col-1">
+        <h1>
+          <a href="./menuMain.html"><i class='fa-solid fa-arrow-right-from-bracket ps-3' style=color:rgb(255,255,255)></i> </a>
+        </h1>
+      </div>
+      <div class="col-10 text-center">
         <img  class="image" src="https://playbyplaytoys.es/wp-content/uploads/2021/01/rickymorty_bleed.png" alt="">
       </div>
+      
     </div>
     <div class="row">
       <div class="col title ">
@@ -26,7 +33,7 @@
     </div>
     <div class="row">
 
-      <div class="col-sm-12 col-lg-6 col-xs-12 justify-content-center" v-for="item in wholeCardsData">
+      <div class="col-sm-12 col-lg-6 col-xs-12 justify-content-center" v-for="(item,i) in wholeCardsData">
         <div class="card mb-3" style="max-width: 540px;">
           <div class="row g-0">
             <div class="col-md-4 ">
@@ -42,7 +49,11 @@
                 <h4 class="card-text-5">{{item.location}}</h4>
                 <h4 class="card-text-6">Valor: $ {{item.price}}</h4>
                 <div class="button1">
+<<<<<<< HEAD
                   <button class="btn" type="button" >Comprar</button>
+=======
+                  <button class="btn" type="button" @click="buyCards(item,currentLoguedUser)" >Comprar</button>
+>>>>>>> 3b6d8235c4fb2805d0ed11822f4e6b41ece090f7
                 </div>
               </div>
             </div>
@@ -52,7 +63,8 @@
     </div>
     <div class="row m-3">
       <div class="button2">
-        <button  type="button" >Historial de compras</button>
+        <a href="./shoppingHistory.html"> <button  type="button"  >Historial de compras</button></a>
+       
       </div>
     </div>
   </div>

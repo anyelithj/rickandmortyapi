@@ -30,7 +30,7 @@ var app = new Vue({
             localStorage.setItem("users", JSON.stringify(this.users))
         },
         register(){
-          this.validations()? 
+          this.validations() ? 
           this.error
           // this.message('https://media2.giphy.com/media/jSQCODNIa6k5myYjyL/200w.webp',"Oops",2200,"center", "Verifique que los datos sean correctos", "error");
 
@@ -41,6 +41,7 @@ var app = new Vue({
                 password: this.password,
                 type: this.type,
                 rick: this.rick,
+                history:[],
                 cards: []
                 });
                 this.updateLocalStorage()
