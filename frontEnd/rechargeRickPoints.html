@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Rick and Morty API</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/base.css">
+    <script src="https://kit.fontawesome.com/eb9c72ba98.js" crossorigin="anonymous"></script>  
+</head>
+<body>
+    <div id="app" class="container w-75 mt-5">
+     <a href="./menuMain.html"><i class='fa-solid fa-arrow-right-from-bracket ps-3 icon'></i> </a> 
+     <div class="row">
+      <div class="col title-main">
+        <h1>Recargar rickcoin</h1>
+      </div>
+    </div> 
+     <div class="card-group my-5 cards">
+        <div class="card text-center mx-2 my-5 pt-5">
+            <div class="card-body">
+              <div>
+                <img src="https://www.onlygfx.com/wp-content/uploads/2020/11/stack-of-gold-coins-1.png" width="150px" height="150px" alt="imagen dinero">
+              </div>
+              <h5 class="card-title mt-4 mb-3 h2"><span>RC-</span>5000</h5>
+              <p class="text-white h4"><span class="px-1">$</span>50.000</p>
+              <div class="d-grid gap-2 mb-3 mt-5">
+                <button type="button" class="button" data-bs-toggle="modal" data-bs-target="#middle">
+                    Comprar
+                  </button>
+                  <div class="modal fade" id="middle" tabindex="-1" aria-labelledby="middle" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h1 class="modal-title fs-5" id="middle">Medio de Pago</h1>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                          <select
+                          v-model="optionPayment"
+                          class="form-select"
+                        >
+                          <option v-for="(item,index) in entityToPay" v-text="item"></option>
+                        </select>
+                        <span class="error" style="color: red" v-if="errorPayment"
+                        >Seleccione un medio de pago</span>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                          <button type="button" class="btn button" @click="rechargeRickCoins(5000)">Pagar</button>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+          </div>
+          
+          <div class="card text-center mx-2 my-5 pt-5">
+            <div class="card-body">
+              <div>
+                <img src="https://www.onlygfx.com/wp-content/uploads/2020/11/stack-of-gold-coins-1.png" width="150px" height="150px" alt="imagen dinero">
+              </div>
+              <h5 class="card-title mt-4 mb-3 h2"><span>RC-</span>2.000</h5>
+              <p class="text-white h4"><span class="px-1">$</span>30.000</p>
+              <div class="d-grid gap-2 mb-3 mt-5">
+                <button type="button" class="button" data-bs-toggle="modal" data-bs-target="#major">
+                    Comprar
+                  </button>
+                  <div class="modal fade" id="major" tabindex="-1" aria-labelledby="major" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h1 class="modal-title fs-5" id="major">Medio de Pago</h1>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                          <select
+                          v-model="optionPayment"
+                          class="form-select"
+                        >
+                          <option v-for="(item,index) in entityToPay" v-text="item"></option>
+                        </select>
+                        <span class="error" style="color: red" v-if="errorPayment"
+                        >Seleccione un medio de pago</span>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                          <button type="button" class="btn button" @click="rechargeRickCoins(2000)">Pagar</button>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+          
+            </div>
+          </div>
+          <div class="card text-center mx-2 my-5 pt-5">
+            <div class="card-body">
+              <div>
+                <img src="https://www.onlygfx.com/wp-content/uploads/2020/11/stack-of-gold-coins-1.png" width="150px" height="150px" alt="imagen dinero">
+              </div>
+              <h5 class="card-title mt-4 mb-3 h2"><span>RC-</span>1.000</h5>
+              <div>
+                <p class="text-white h4"><span class="px-1">$</span>15.000</p>
+              </div>
+              <div class="d-grid gap-2 mb-3 mt-5">
+                  <button type="button" class="button" data-bs-toggle="modal" data-bs-target="#minor">
+                      Comprar
+                    </button>
+                    <div class="modal fade" id="minor" tabindex="-1" aria-labelledby="minor" aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="minor">Medio de Pago</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                            <select
+                            v-model="optionPayment"
+                            class="form-select"
+                          >
+                            <option v-for="(item,index) in entityToPay" v-text="item"></option>
+                          </select>
+                          <span class="error" style="color: red" v-if="errorPayment"
+                          >Seleccione un medio de pago</span>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                            <button type="button" class="btn button" @click="rechargeRickCoins(1000)">Pagar</button>
+                          </div>
+                        </div>
+                      </div>
+                  </div>
+              </div>
+            
+            </div>
+          </div>
+  </div>
+    </div>
+    
+      
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="../backEnd/buyCard.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+      integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+      crossorigin="anonymous"
+    ></script>
+    <script  ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+      integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+      crossorigin="anonymous"
+    ></script> 
+</body>
+</html>

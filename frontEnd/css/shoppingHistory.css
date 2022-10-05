@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Peralta&display=swap');
+body{
+    background-color: #000;
+}
+#app{
+    border-width: 40%;
+    border-color: #fff;
+}
+
+
+.title{    
+    text-align: center;
+    font-family: 'Peralta', cursive;
+    color:  #68c61a;
+  
+}
+.table{
+    color: #fff;
+    background-color: rgb(69, 71, 77);
+}
+.table img{
+    width: 15%;
+}
+.table th{
+    color: #000;
+}
+.container .file1 a img{
+    width: 45%;
+}
+.icon {
+    font-size: 3rem;
+    color: #fff; 
+ }

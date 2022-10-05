@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Peralta&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gemunu+Libre:wght@600&family=Peralta&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@800&display=swap');
+
+body{
+    background-color: black;
+}
+a {
+    text-decoration: none;
+}
+a:hover {
+    color: white;
+}
+.button {
+    border: none;
+    color: white;
+    border-radius: 5px;
+    padding: 5px 30px;
+    background-color: #68c61a;  
+    font-family: 'Gemunu Libre', sans-serif; 
+    font-size: 1.5rem;
+}
+
+.button:hover{
+    background-color: white;
+    color: #02b1c8;
+    border: 1px solid black;
+}
+.btn-secondary{
+    font-family: 'Gemunu Libre', sans-serif; 
+    font-size: 1.5rem;
+    padding: 5px 20px;
+}
+
+.cards {
+    display: flex;
+    flex-direction: column;
+}
+.icon {
+   font-size: 3rem;
+   color: #fff; 
+} 
+.title-main{
+    text-align: center;
+    margin-top: 3%;
+    font-family: 'Peralta', cursive;
+    font-size: 600%;
+    color:  #68c61a;
+}
+.card {
+    background-color: rgb(69, 71, 77);
+    width: 22rem;
+    color: #02b1c8;
+    border-color: black; 
+    font-weight: 900;
+    font-size: 1rem;
+    font-family: 'Peralta', cursive;
+}
+.box-price {
+    background-color: rgb(69, 71, 77);
+    border-radius: 5px;
+}
+.box-title {
+    color:  #02b1c8; 
+    font-family: 'Peralta', cursive;
+}
+.img-menu {
+    width:300px;
+    height:300px;
+}
+
+ @media (min-width: 1440px) {
+    .cards {
+        display: flex;
+        flex-direction: row;
+    }  
+ }
+ 
