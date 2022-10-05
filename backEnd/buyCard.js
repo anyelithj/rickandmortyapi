@@ -17,10 +17,13 @@ new Vue({
         this.fetchingDataFromApi()
         this.wholeRegisteredUsers = this.getterParsedLocalStorage(this.USERS_REGISTERED)
         this.currentLoguedUser = this.getterParsedLocalStorage(this.CURRENT_USER_LOGUED)
-       
-
     },
     methods: {
+        payment(value) {
+            this.rechargedValue = value;
+            console.log(this.rechargedValue )
+            this.rechargedValue = "";
+        },
         setterLocalStorage(key, data){
             localStorage.setItem(key, JSON.stringify(data))
         },
@@ -63,6 +66,7 @@ new Vue({
             }
         },
         buyCards( card ){
+
             let singleLogued = this.wholeRegisteredUsers.filter(users =>  this.currentLoguedUser[0].username ===  users.username  )
 
             let restUsers = this.wholeRegisteredUsers.filter(users =>  singleLogued[0].username !==  users.username  )
@@ -102,7 +106,6 @@ new Vue({
             this.test.push(userUpdated) 
             this.setterLocalStorage(this.CURRENT_USER_LOGUED,this.test)
             
-        },
-        
+        }
     }
 })

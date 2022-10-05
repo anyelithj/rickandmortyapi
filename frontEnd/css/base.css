@@ -18,7 +18,7 @@ a:hover {
     padding: 5px 30px;
     background-color: #68c61a;  
     font-family: 'Gemunu Libre', sans-serif; 
-    font-size: 1.2rem;
+    font-size: 1.5rem;
 }
 
 .button:hover{
@@ -26,10 +26,25 @@ a:hover {
     color: #02b1c8;
     border: 1px solid black;
 }
+.btn-secondary{
+    font-family: 'Gemunu Libre', sans-serif; 
+    font-size: 1.5rem;
+    padding: 5px 20px;
+}
+.btn-secondary:hover{
+    background-color: white;
+    color: #02b1c8;
+    border: 1px solid black;
+    background-color: rgb(69, 71, 77);
+}
 .cards {
     display: flex;
     flex-direction: column;
 }
+.icon {
+   font-size: 3rem;
+   color: #fff; 
+} 
 .card {
     background-color: rgb(69, 71, 77);
     width: 22rem;
