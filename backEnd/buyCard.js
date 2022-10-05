@@ -36,6 +36,11 @@ new Vue({
         this.errorPayment = false;
       }
     },
+    created(){
+        this.fetchingDataFromApi()
+        this.wholeRegisteredUsers = this.getterParsedLocalStorage(this.USERS_REGISTERED)
+        this.currentLoguedUser = this.getterParsedLocalStorage(this.CURRENT_USER_LOGUED)
+    },
     setterLocalStorage(key, data) {
       localStorage.setItem(key, JSON.stringify(data));
     },
@@ -105,40 +110,35 @@ new Vue({
         );
         let discount = card.price;
 
-        singleLogued[0].cards.push(card);
-        singleLogued[0].history.push(card);
-        singleLogued[0].rick -= discount;
+                    singleLogued[0].cards.push(card) 
+                    singleLogued[0].history.push(card) 
+                    singleLogued[0].rick -= discount
 
-        this.setterLocalStorage(this.CURRENT_USER_LOGUED, singleLogued);
-
-        const [userWithDiscount] = singleLogued;
-
-        this.wholeRegisteredUsers.push(userWithDiscount);
-        this.setterLocalStorage(
-          this.USERS_REGISTERED,
-          this.wholeRegisteredUsers
-        );
-      } else {
-        this.message(
-          "warning",
-          "Oops",
-          2000,
-          "center",
-          "Saldo insuficiente. Por favor recargue su cuenta.",
-          false
-        );
-      }
-    },
-    rechargeRickCoins(value, user) {
-      let res = user.map((usr) => {
-        return {
-          ...usr,
-          rick: (usr.rick += value),
-        };
-      });
-      let [userUpdated] = res;
-      this.test.push(userUpdated);
-      this.setterLocalStorage(this.CURRENT_USER_LOGUED, this.test);
-    },
-  },
-});
+                    this.setterLocalStorage(this.CURRENT_USER_LOGUED, singleLogued)
+                   
+                    const [userWithDiscount] = singleLogued
+                    
+                    this.wholeRegisteredUsers.push(userWithDiscount)
+                    this.setterLocalStorage(this.USERS_REGISTERED, this.wholeRegisteredUsers)
+               
+            } else{
+                this.message('warning','Oops',2000, 'center','Saldo insuficiente. Por favor recargue su cuenta.',false)
+                
+            }
+            
+        },
+        rechargeRickCoins(value, user){
+            let res = user.map(usr => {
+                return{
+                    ...usr,
+                    rick: usr.rick += value
+                } 
+            })
+            let [userUpdated] = res
+            this.test.push(userUpdated) 
+            this.setterLocalStorage(this.CURRENT_USER_LOGUED,this.test)
+            
+        },
+        
+    }
+})

@@ -116,6 +116,7 @@ var app = new Vue({
       
     }else{
       this.userCredentials = JSON.parse(localStorage.getItem("users"));
+      this.updateLocalStorage()
     }
   },
 });

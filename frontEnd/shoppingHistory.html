@@ -39,8 +39,8 @@
                                 
                             </tr>
                         </thead>
-                        <tbody v-if="loguedUser.history.length">
-                            <tr class="body" v-for="(item,index)  in  loguedUser.history">
+                        <tbody v-if="loguedUser[0].history.length">
+                            <tr class="body" v-for="(item,index)  in  loguedUser[0].history">
 
 
                                 <td ><img :src="item.image"class="rounded-circle" alt=""></td>
