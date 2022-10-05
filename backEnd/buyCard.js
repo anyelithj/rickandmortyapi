@@ -17,7 +17,7 @@ new Vue({
         this.fetchingDataFromApi()
         this.wholeRegisteredUsers = this.getterParsedLocalStorage(this.USERS_REGISTERED)
         this.currentLoguedUser = this.getterParsedLocalStorage(this.CURRENT_USER_LOGUED)
-        
+       
 
     },
     methods: {
