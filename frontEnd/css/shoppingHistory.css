@@ -24,6 +24,10 @@ body{
 .table th{
     color: #000;
 }
-.container .file-1 a img{
+.container .file1 a img{
     width: 45%;
 }
+.icon {
+    font-size: 3rem;
+    color: #fff; 
+ }
