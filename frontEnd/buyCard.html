@@ -26,7 +26,7 @@
     </div>
     <div class="row">
 
-      <div class="col-sm-12 col-lg-6 col-xs-12 justify-content-center" v-for="item in wholeCardsData">
+      <div class="col-sm-12 col-lg-6 col-xs-12 justify-content-center" v-for="(item,i) in wholeCardsData">
         <div class="card mb-3" style="max-width: 540px;">
           <div class="row g-0">
             <div class="col-md-4 ">
@@ -42,7 +42,7 @@
                 <h4 class="card-text-5">{{item.location}}</h4>
                 <h4 class="card-text-6">Valor: $ {{item.price}}</h4>
                 <div class="button1">
-                  <button class="btn" type="button" >Comprar</button>
+                  <button class="btn" type="button" @click="buyCards(item,currentLoguedUser)" >Comprar</button>
                 </div>
               </div>
             </div>
