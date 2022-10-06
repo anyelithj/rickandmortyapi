@@ -4,6 +4,7 @@ var app = new Vue({
    
     loguedUser:[],
     users:[],
+    users2:[],
     username:"",
     singleLogued:[],
     singleLogued2:[],
@@ -22,7 +23,7 @@ var app = new Vue({
           //datos sin el usuario logeado
           this.singleLogued = this.users.filter(users =>  this.loguedUser[0].username !==  users.username  )
           this.users= this.singleLogued 
- 
+          this.users2 = this.users.filter(users =>  users.type !==  "1" && users.type !==  1 )
           //Datos de usuario logeado
           this.singleLogued2 = this.users.filter(users =>  this.loguedUser[0].username ===  users.username  )
           this.cards2 = this.loguedUser[0].cards
@@ -93,6 +94,7 @@ var app = new Vue({
   created(){
       this.loguedUser = JSON.parse(localStorage.getItem("userLoged"));
       this.users = JSON.parse(localStorage.getItem("users"));
+      console.log(this.users2)
       console.log(this.loguedUser[0].cards)
   },
 });
