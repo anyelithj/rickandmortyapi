@@ -12,7 +12,9 @@ new Vue({
         errorPayment: false,
         CURRENT_USER_LOGUED: "userLoged",
         USERS_REGISTERED: "users",
-        DATA_FETCHED_KEY: "data-api"
+        DATA_FETCHED_KEY: "data-api",
+        code:0,
+        modal: false
     },
     created(){
         this.fetchingDataFromApi()
@@ -50,12 +52,18 @@ new Vue({
         max = Math.floor(max);
         return Math.floor(Math.random() * (max - min + 1)) + min;
       },
+      
       async fetchingDataFromApi() {
         try {
           const URL = "https://rickandmortyapi.com/api/character";
           const request = await fetch(URL);
           const response = await request.json();
-  
+          function v4() {
+            return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+              var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+              return v.toString(16)
+            })
+          }
           this.setterLocalStorage(
             this.DATA_FETCHED_KEY,
             (this.wholeCardsData = response.results.map(
@@ -67,6 +75,8 @@ new Vue({
                 image,
                 location: location.name,
                 price: this.getRandomValue(),
+                code: v4(),
+                state: "Comparada"
               })
             ))
           );
@@ -74,7 +84,11 @@ new Vue({
           console.log(error);
         }
       },
+     
+
       buyCards(card) {
+        
+    
         let singleLogued = this.wholeRegisteredUsers.filter(
           (users) => this.currentLoguedUser[0].username === users.username
         );
@@ -107,7 +121,7 @@ new Vue({
                       
                       this.wholeRegisteredUsers.push(userWithDiscount)
                       this.setterLocalStorage(this.USERS_REGISTERED, this.wholeRegisteredUsers)
-                 
+                      setTimeout(function() {location.href="./buyCard.html"}, 800);
               } else{
                   this.message('warning','Oops',2000, 'center','Saldo insuficiente. Por favor recargue su cuenta.',false)
               }
@@ -132,10 +146,14 @@ new Vue({
                       
                       this.wholeRegisteredUsers.push(userRechargeUpdated)
                       this.setterLocalStorage(this.USERS_REGISTERED, this.wholeRegisteredUsers) 
+                      setTimeout(function() {location.href="./rechargeRickPoints.html"}, 2000);
               } else{
                   this.message('warning','Oops',2000, 'center','Monto inválido. Por favor ingresa un valor mayor o igual a 100.',false)
               }
             }  
-    },
+    },computed:{
+      
+    }
+    
    
 })

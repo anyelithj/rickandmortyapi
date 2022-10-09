@@ -48,7 +48,7 @@
                 <h4 class="card-text-5">{{item.location}}</h4>
 
                 <div class="button1">
-                  <button @click="selectCards(item)" type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                  <button @click="selectCards(item)" type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal" @click="selectCards( card )">
                     obsequiar
                   </button>
                 </div>
@@ -64,8 +64,8 @@
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Obsequiar tarjeta</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              <h5 class="modal-title" id="exampleModalLabel" >Obsequiar tarjeta</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" ></button>
             </div>
             <div class="modal-body">
               <label class="form-label">Usuarios</label>
