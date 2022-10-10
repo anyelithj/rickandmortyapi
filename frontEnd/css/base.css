@@ -42,9 +42,8 @@ a:hover {
 } 
 .title-main{
     text-align: center;
-    margin-top: 3%;
     font-family: 'Peralta', cursive;
-    font-size: 600%;
+    font-size: 2rem;
     color:  #68c61a;
 }
 .card {
@@ -69,10 +68,14 @@ a:hover {
     height:300px;
 }
 
- @media (min-width: 1440px) {
+ @media (min-width: 768px) {
     .cards {
         display: flex;
         flex-direction: row;
     }  
+    .img-menu {
+        width:200px;
+        height:200px;
+    }
  }
  
