@@ -84,11 +84,7 @@ new Vue({
           console.log(error);
         }
       },
-     
-
       buyCards(card) {
-        
-    
         let singleLogued = this.wholeRegisteredUsers.filter(
           (users) => this.currentLoguedUser[0].username === users.username
         );
@@ -102,12 +98,11 @@ new Vue({
 
         let mappingUsersCardsValidation = (user,data) => user.some(userCards => userCards.name === data.name )
          
-        
         if(mappingUsersCardsValidation( singleLogued[0].cards,card ) === true){
           this.message(
             "warning",
             "!Oops!",
-            2000,
+            2300,
             "center",
             "¡No puedes tener cartas repetidas. Intenta comprar una diferente!",
             false
@@ -127,53 +122,48 @@ new Vue({
           );
           let discount = card.price;
   
-                      singleLogued[0].cards.push(card) 
-                      singleLogued[0].history.push(card) 
-                      singleLogued[0].rick -= discount
-  
-                      this.setterLocalStorage(this.CURRENT_USER_LOGUED, singleLogued)
-                     
-                      const [userWithDiscount] = singleLogued
+          singleLogued[0].cards.push(card) 
+          singleLogued[0].history.push(card) 
+          singleLogued[0].rick -= discount
+          this.setterLocalStorage(this.CURRENT_USER_LOGUED, singleLogued)
+          const [userWithDiscount] = singleLogued
                       
-                      this.wholeRegisteredUsers.push(userWithDiscount)
-                      this.setterLocalStorage(this.USERS_REGISTERED, this.wholeRegisteredUsers)
-                      setTimeout(function() {location.href="./buyCard.html"}, 800);
-              } else{
-                  this.message('warning','Oops',2000, 'center','Saldo insuficiente. Por favor recargue su cuenta.',false)
+          this.wholeRegisteredUsers.push(userWithDiscount)
+          this.setterLocalStorage(this.USERS_REGISTERED, this.wholeRegisteredUsers)
+          setTimeout(function() {location.href="./buyCard.html"}, 800);
+          } else{
+          this.message('warning','Oops',2300, 'center','Saldoinsuficiente. Por favor recargue su cuenta.',false)
                   
-                  let [singleUser] = singleLogued
+          let [singleUser] = singleLogued
           this.wholeRegisteredUsers.push(singleUser)
           this.setterLocalStorage(this.USERS_REGISTERED, this.wholeRegisteredUsers)
-              }
+          }
           },
           rechargeRickCoins(value){
   
-              let singleLogued = this.wholeRegisteredUsers.filter(users =>  this.currentLoguedUser[0].username ===  users.username  )
+          let singleLogued = this.wholeRegisteredUsers.filter(users =>  this.currentLoguedUser[0].username ===  users.username  )
   
-              let restUsers = this.wholeRegisteredUsers.filter(users =>  singleLogued[0].username !==  users.username  )
-              this.wholeRegisteredUsers = [...restUsers]
+          let restUsers = this.wholeRegisteredUsers.filter(users =>  singleLogued[0].username !==  users.username  )
+          this.wholeRegisteredUsers = [...restUsers]
   
-              this.setterLocalStorage(this.USERS_REGISTERED, this.wholeRegisteredUsers)
+          this.setterLocalStorage(this.USERS_REGISTERED, this.wholeRegisteredUsers)
   
-              if(value > 99) {
-                  this.message('success','!Enhorabuena!',2000, 'center',`Recarga exitosa. Has recargado ${value} RickCoins !`,false)
+          if(value > 99) {
+          this.message('success','!Enhorabuena!',2000, 'center',`Recarga exitosa. Has recargado ${value} RickCoins !`,false)
                      
-                      singleLogued[0].rick += value
+          singleLogued[0].rick += value
   
-                      this.setterLocalStorage(this.CURRENT_USER_LOGUED, singleLogued)
+          this.setterLocalStorage(this.CURRENT_USER_LOGUED, singleLogued)
                      
-                      const [userRechargeUpdated] = singleLogued
+          const [userRechargeUpdated] = singleLogued
                       
-                      this.wholeRegisteredUsers.push(userRechargeUpdated)
-                      this.setterLocalStorage(this.USERS_REGISTERED, this.wholeRegisteredUsers) 
-                      setTimeout(function() {location.href="./rechargeRickPoints.html"}, 2000);
-              } else{
-                  this.message('warning','Oops',2000, 'center','Monto inválido. Por favor ingresa un valor mayor o igual a 100.',false)
-              }
-            }  
-    },computed:{
-      
+          this.wholeRegisteredUsers.push(userRechargeUpdated)
+          this.setterLocalStorage(this.USERS_REGISTERED, this.wholeRegisteredUsers) 
+          setTimeout(function() {location.href="./rechargeRickPoints.html"}, 2000);
+          } else{
+          this.message('warning','Oops',2300, 'center','Monto inválido. Por favor ingresa un valor mayor o igual a 100.',false)
+          }
+          }  
     }
-    
    
 })
