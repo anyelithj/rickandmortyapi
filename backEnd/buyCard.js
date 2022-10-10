@@ -99,8 +99,24 @@ new Vue({
         this.wholeRegisteredUsers = [...restUsers];
   
         this.setterLocalStorage(this.USERS_REGISTERED, this.wholeRegisteredUsers);
-  
-        if (singleLogued[0].rick > card.price) {
+
+        let mappingUsersCardsValidation = (user,data) => user.some(userCards => userCards.name === data.name )
+         
+        
+        if(mappingUsersCardsValidation( singleLogued[0].cards,card ) === true){
+          this.message(
+            "warning",
+            "!Oops!",
+            2000,
+            "center",
+            "¡No puedes tener cartas repetidas. Intenta comprar una diferente!",
+            false
+          );
+          let [singleUser] = singleLogued
+          this.wholeRegisteredUsers.push(singleUser)
+          this.setterLocalStorage(this.USERS_REGISTERED, this.wholeRegisteredUsers)
+        }
+        else if (singleLogued[0].rick > card.price && mappingUsersCardsValidation(singleLogued[0].cards,card  ) === false ) {
           this.message(
             "success",
             "!Enhorabuena!",
@@ -124,6 +140,10 @@ new Vue({
                       setTimeout(function() {location.href="./buyCard.html"}, 800);
               } else{
                   this.message('warning','Oops',2000, 'center','Saldo insuficiente. Por favor recargue su cuenta.',false)
+                  
+                  let [singleUser] = singleLogued
+          this.wholeRegisteredUsers.push(singleUser)
+          this.setterLocalStorage(this.USERS_REGISTERED, this.wholeRegisteredUsers)
               }
           },
           rechargeRickCoins(value){
