@@ -1,0 +1,15 @@
+.form{
+    margin: 0px auto;
+    background-color: #ffffff;
+    border: 1px solid black;
+    border-radius: 8px;
+    opacity: 0.9;
+    font-weight: 600;
+    font-size: 22px;
+  }
+  .title {
+    color:  #02b1c8; 
+    font-family: 'Peralta', cursive;
+    font-size: 2rem;
+    border-color: black; 
+}
